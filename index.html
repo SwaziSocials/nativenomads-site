@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Native Nomads</title>
+<meta name="description" content="Native Nomads. Live globally. Connect deeply. Move with meaning. Join the letter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;800;900&family=Italiana&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#f6efe4; --dim:rgba(246,239,228,.68); --bg:#0d0a08; --clay:#b4532a; --sun:#e8a35c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--bg);color:var(--ink);font-family:Archivo,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+
+/* ---------- stage ---------- */
+.stage{position:fixed;inset:0;overflow:hidden;z-index:0}
+.slide{position:absolute;inset:-4%;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:opacity 2.2s ease}
+.slide.on{opacity:1;animation:drift 9s ease-out forwards}
+@keyframes drift{from{transform:scale(1.14) translate3d(1%,1%,0)}to{transform:scale(1.02) translate3d(-1%,-.5%,0)}}
+.shade{position:absolute;inset:0;background:
+  radial-gradient(120% 80% at 50% 40%,rgba(13,10,8,.15) 0%,rgba(13,10,8,.7) 70%,rgba(13,10,8,.95) 100%),
+  linear-gradient(180deg,rgba(13,10,8,.5) 0%,rgba(13,10,8,0) 30%,rgba(13,10,8,.85) 100%)}
+.grain{position:absolute;inset:-50%;pointer-events:none;opacity:.13;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.glow{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);opacity:.28;mix-blend-mode:screen;background:radial-gradient(circle,var(--sun),transparent 65%);animation:orbit 22s ease-in-out infinite alternate;left:-10vmax;top:30%}
+@keyframes orbit{to{transform:translate(55vw,-25vh)}}
+
+/* ---------- layout ---------- */
+.wrap{position:relative;z-index:2;min-height:100svh;display:flex;flex-direction:column;padding:22px clamp(16px,4vw,48px)}
+header{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--dim)}
+header .mark{color:var(--ink);font-weight:800}
+.clock{font-variant-numeric:tabular-nums}
+
+main{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6vh 0}
+.eyebrow{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--sun);margin-bottom:22px;opacity:0;animation:rise 1.2s .2s ease forwards}
+h1{line-height:.82;opacity:0;animation:rise 1.4s .4s ease forwards}
+h1 .native{display:block;font-weight:900;font-size:clamp(68px,17vw,230px);letter-spacing:-.02em}
+h1 .nomads{display:block;font-family:'Pinyon Script',cursive;font-weight:400;font-size:clamp(64px,14vw,190px);margin-top:-.28em;color:var(--ink);text-shadow:0 0 40px rgba(232,163,92,.35)}
+.line{margin-top:28px;font-family:Italiana,serif;font-size:clamp(20px,2.6vw,30px);letter-spacing:.04em;opacity:0;animation:rise 1.2s .9s ease forwards}
+.rot{display:inline-block;min-width:5.5ch;color:var(--sun);font-style:italic;transition:opacity .5s,transform .5s}
+.rot.out{opacity:0;transform:translateY(8px)}
+
+/* ---------- newsletter ---------- */
+.join{margin-top:44px;display:flex;flex-direction:column;align-items:center;gap:14px;opacity:0;animation:rise 1.2s 1.2s ease forwards}
+.btn{position:relative;display:inline-flex;align-items:center;gap:14px;padding:20px 38px;border-radius:999px;text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:#1a0f08;background:var(--ink);overflow:hidden;transition:transform .35s ease,box-shadow .35s ease;box-shadow:0 10px 40px rgba(0,0,0,.4)}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(232,163,92,.55) 50%,transparent 70%);transform:translateX(-100%);animation:sheen 3.6s 2s ease-in-out infinite}
+@keyframes sheen{0%,60%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.btn:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(232,163,92,.35)}
+.btn .arr{transition:transform .35s}
+.btn:hover .arr{transform:translateX(5px)}
+.fine{font-size:13px;color:var(--dim);max-width:34ch;line-height:1.5}
+
+/* ---------- marquee ---------- */
+.marquee{position:relative;z-index:2;overflow:hidden;border-top:1px solid rgba(246,239,228,.14);border-bottom:1px solid rgba(246,239,228,.14);padding:14px 0;margin:0 calc(-1*clamp(16px,4vw,48px))}
+.track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.track span{font-family:Italiana,serif;font-size:clamp(18px,2.2vw,26px);letter-spacing:.12em;text-transform:uppercase;padding:0 26px;white-space:nowrap;color:var(--dim)}
+.track span i{font-family:'Pinyon Script',cursive;font-style:normal;text-transform:none;letter-spacing:0;color:var(--sun);font-size:1.25em}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:18px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
+footer nav{display:flex;gap:22px}
+footer a{text-decoration:none;transition:color .3s}
+footer a:hover{color:var(--sun)}
+
+
+/* ---------- watch ---------- */
+.watch{position:relative;z-index:2;background:linear-gradient(180deg,rgba(13,10,8,0),var(--bg) 120px);padding:120px clamp(16px,4vw,48px) 90px}
+.watch .eyebrow{opacity:1;animation:none;text-align:center}
+.watch h2{text-align:center;font-family:Italiana,serif;font-weight:400;font-size:clamp(34px,5vw,60px);letter-spacing:.02em}
+.watch .sub{text-align:center;color:var(--dim);margin:14px auto 46px;max-width:46ch;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px;max-width:1180px;margin:0 auto}
+.card{display:block;text-decoration:none;border:1px solid rgba(246,239,228,.14);border-radius:14px;overflow:hidden;background:rgba(246,239,228,.03);transition:transform .35s ease,border-color .35s}
+.card:hover{transform:translateY(-4px);border-color:rgba(232,163,92,.6)}
+.card .th{position:relative;aspect-ratio:16/9;background:#1a130e center/cover}
+.card .len{position:absolute;right:10px;bottom:10px;background:rgba(13,10,8,.82);font-size:11px;letter-spacing:.2em;padding:6px 10px;border-radius:6px}
+.card .tx{padding:18px 20px 22px}
+.card .k{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--sun)}
+.card h3{font-weight:800;font-size:19px;margin:8px 0 6px}
+.card p{color:var(--dim);font-size:14px;line-height:1.55}
+.card.soon{pointer-events:none;opacity:.6}
+.watch .trail{display:block;text-align:center;margin-top:40px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);text-decoration:none}
+.watch .trail:hover{color:var(--sun)}
+.join .more{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);text-decoration:none}
+.join .more:hover{color:var(--sun)}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@media (max-width:560px){header .hide-s{display:none}.btn{padding:18px 28px;letter-spacing:.2em}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.slide.on,.eyebrow,h1,.line,.join{opacity:1}}
+</style>
+</head>
+<body>
+<div class="stage" aria-hidden="true">
+  <div class="slide" style="background-image:url(img/aerial-city-view.jpg)"></div>
+  <div class="slide" style="background-image:url(img/people-ocean-water.jpg)"></div>
+  <div class="slide" style="background-image:url(img/fire-light-art-dusk.jpg)"></div>
+  <div class="slide" style="background-image:url(img/warm-evening-portrait.jpg)"></div>
+  <div class="glow"></div>
+  <div class="shade"></div>
+  <div class="grain"></div>
+</div>
+
+<div class="wrap">
+  <header>
+    <span class="mark">Native Nomads</span>
+    <span class="hide-s clock"><span id="la">LA --:--</span> &nbsp;·&nbsp; <span id="ja">Ocho Rios --:--</span></span>
+  </header>
+
+  <main>
+    <p class="eyebrow">A letter for the ones who move</p>
+    <h1><span class="native">NATIVE</span><span class="nomads">Nomads</span></h1>
+    <p class="line">Live globally. Connect deeply. <span class="rot" id="rot">Wander.</span></p>
+
+    <div class="join">
+      <a class="btn" href="https://forms.gle/TcB6cx6fcfrr6YxKA" target="_blank" rel="noopener">Join the letter <span class="arr">→</span></a>
+      <p class="fine">Places, gatherings and stories, straight to your inbox. No noise.</p>
+      <a class="more" href="#watch">Watch the slow travel series ↓</a>
+    </div>
+  </main>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="track"></div>
+  </div>
+
+  <footer>
+    <span>© <span id="yr"></span> Native Nomads</span>
+    <nav>
+      <a href="https://www.instagram.com/nativenomads_earth" target="_blank" rel="noopener">Instagram</a>
+      <a href="#watch">Watch</a>
+      <a href="https://www.youtube.com/channel/UC0h7vzxHTVuT_9rpfnc3mAw" target="_blank" rel="noopener">YouTube</a>
+    </nav>
+  </footer>
+</div>
+
+<section class="watch" id="watch">
+  <p class="eyebrow">Lo-fi · 432 Hz · one country at a time</p>
+  <h2>Slow travel, on screen</h2>
+  <p class="sub">Calm music and real views to explore, focus and wind down. Jamaica is first.</p>
+  <div class="grid">
+    <a class="card" href="https://youtu.be/RHm0RGlYWCQ" target="_blank" rel="noopener">
+      <div class="th" style="background-image:url(https://i.ytimg.com/vi/RHm0RGlYWCQ/hqdefault.jpg)"><span class="len">1:00:00</span></div>
+      <div class="tx"><span class="k">Explore · 1 hour</span><h3>Jamaica</h3><p>A slow, full-screen journey through the island with calm lo-fi.</p></div>
+    </a>
+    <a class="card" href="https://youtu.be/34oe3VER95Q" target="_blank" rel="noopener">
+      <div class="th" style="background-image:url(https://i.ytimg.com/vi/34oe3VER95Q/hqdefault.jpg)"><span class="len">3:00:00</span></div>
+      <div class="tx"><span class="k">Focus session · 3 hours</span><h3>Jamaica Focus</h3><p>Pomodoro 25/5. Calm work views, a soft chime and a breathing ring for each break.</p></div>
+    </a>
+    <a class="card" href="https://youtu.be/kAXzgUvrWWg" target="_blank" rel="noopener">
+      <div class="th" style="background-image:url(https://i.ytimg.com/vi/kAXzgUvrWWg/hqdefault.jpg)"><span class="len">9:00:00</span></div>
+      <div class="tx"><span class="k">Evening wind down · 9 hours</span><h3>Sunset to campfire to stars</h3><p>Calm lo-fi that pauses each hour and fades out by 6:30, then fire sounds on a dark screen.</p></div>
+    </a>
+    <a class="card" href="https://youtu.be/gcTxaD3BShs" target="_blank" rel="noopener">
+      <div class="th" style="background-image:url(https://i.ytimg.com/vi/gcTxaD3BShs/hqdefault.jpg)"><span class="len">9:00:00</span></div>
+      <div class="tx"><span class="k">Evening wind down · 9 hours</span><h3>Sunset to ocean to stars</h3><p>The same slow night with moonlit waves instead of fire, then ocean sounds on a dark screen.</p></div>
+    </a>
+  </div>
+  <a class="trail" href="https://youtu.be/WhB5GgXxH6M" target="_blank" rel="noopener">▶ Watch the 41-second trailer</a>
+</section>
+
+<script>
+// slideshow
+const slides=[...document.querySelectorAll('.slide')];let s=0;
+slides[0].classList.add('on');
+setInterval(()=>{slides[s].classList.remove('on');s=(s+1)%slides.length;slides[s].classList.add('on')},7000);
+
+// rotating word
+const words=['Wander.','Gather.','Create.','Belong.','Move with meaning.'];let w=0;const rot=document.getElementById('rot');
+setInterval(()=>{rot.classList.add('out');setTimeout(()=>{w=(w+1)%words.length;rot.textContent=words[w];rot.classList.remove('out')},500)},2600);
+
+// marquee
+const bits=['Los Angeles','<i>wander</i>','Ocho Rios','<i>gather</i>','Culture keepers','<i>create</i>','Artists','<i>belong</i>','Storytellers','<i>roam</i>'];
+document.getElementById('track').innerHTML=(bits.map(b=>`<span>${b}</span>`).join('')).repeat(4);
+
+// clocks
+const fmt=tz=>new Date().toLocaleTimeString('en-US',{timeZone:tz,hour:'numeric',minute:'2-digit'});
+const tick=()=>{document.getElementById('la').textContent='LA '+fmt('America/Los_Angeles');document.getElementById('ja').textContent='Ocho Rios '+fmt('America/Jamaica')};
+tick();setInterval(tick,30000);
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+// subtle parallax
+const stage=document.querySelector('.stage');
+addEventListener('pointermove',e=>{const x=(e.clientX/innerWidth-.5)*14,y=(e.clientY/innerHeight-.5)*14;stage.style.transform=`translate3d(${-x}px,${-y}px,0)`});
+</script>
+</body>
+</html>
