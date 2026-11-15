@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Native Nomads (bright draft)</title>
+<title>Native Nomads (draft v2)</title>
 <meta name="robots" content="noindex">
 <meta name="description" content="Native Nomads: calm 432 Hz music and real views from one country at a time. Background sounds to focus, work from home and wind down. Starting with Jamaica.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;800;900&family=Italiana&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;800;900&family=Italiana&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#2a1f18; --dim:rgba(42,31,24,.72); --bg:#f8f1e5; --clay:#c8553d; --sun:#cf7a22; --teal:#2f7f78; --lilac:#9b7fd0; --mustard:#e3b23c; --rose:#e48a86; --cream:#f8f1e5;
@@ -214,6 +214,47 @@ h1 .nomads{color:var(--clay);text-shadow:none}
 .list,.access .card{box-shadow:0 10px 30px rgba(42,31,24,.06)}
 .list{background:rgba(255,255,255,.6)}
 .marquee{background:rgba(255,255,255,.35)}
+
+/* ---------- DRAFT v2 (Nov 15, Ashley: match the event-flyer look: peach paper, watercolor smoke, Playfair + colored italic, spaced caps, white rounded cards) ---------- */
+:root{--bg:#f7e8d9;--ink:#2b2130;--dim:rgba(43,33,48,.7);--violet:#6a3fd1;--coral:#d0643a;--paper:#f7e8d9}
+body{background:var(--paper);font-family:Jost,Archivo,system-ui,sans-serif}
+.wrap::before{background:radial-gradient(circle,rgba(176,140,230,.55),transparent 65%)}
+.wrap::after{background:radial-gradient(circle,rgba(240,160,120,.55),transparent 65%)}
+main::before{display:none}
+.eyebrow{font-family:Jost,sans-serif;font-weight:500;letter-spacing:.38em;color:var(--ink);opacity:.75}
+h1{line-height:1}
+h1 .native,h1 .nomads{display:inline;font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(54px,9vw,128px);letter-spacing:0;margin:0;text-shadow:none}
+h1 .native{color:var(--ink)}
+h1 .nomads{font-style:italic;color:var(--violet);margin-left:.18em}
+.line{font-family:'Playfair Display',serif;font-size:clamp(18px,2.2vw,26px)}
+.rot{color:var(--coral)}
+.heroart{display:block;width:min(820px,96%);margin:-10px auto 6px;-webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 60%,transparent 100%);opacity:0;animation:rise 1.4s .1s ease forwards}
+.collage{display:none}
+.btn{background:var(--ink);color:#fff;letter-spacing:.3em;font-family:Jost,sans-serif;font-weight:500}
+.btn.ghost{background:rgba(255,255,255,.7);color:var(--ink);border:0;box-shadow:0 10px 30px rgba(43,33,48,.10)}
+.sec h2{font-family:'Playfair Display',serif;font-weight:400;letter-spacing:0}
+.sec h2 em{font-family:'Playfair Display',serif;font-style:italic;color:var(--violet);font-size:1em}
+.sec.joinsec h2 em,.sec.access h2 em{color:var(--coral)}
+.sec .eyebrow{color:var(--ink)!important;opacity:.7}
+.sec.sounds{background:radial-gradient(60% 50% at 85% 10%,rgba(176,140,230,.28),transparent 70%),var(--paper)}
+.sec.access{background:radial-gradient(60% 50% at 10% 20%,rgba(240,160,120,.30),transparent 70%),#f8ebde}
+.sec.world{background:radial-gradient(60% 60% at 50% 40%,rgba(176,140,230,.22),transparent 70%),var(--paper)}
+.sec.joinsec{background:radial-gradient(60% 60% at 50% 50%,rgba(240,160,120,.28),transparent 70%),#f8ebde}
+.sec.event{background:var(--paper)}
+.access .card,.list,.tip{background:#fff;border:0;border-radius:18px;box-shadow:0 14px 40px rgba(43,33,48,.10)}
+.tip{padding:18px 20px}
+.access .card h3{font-family:'Playfair Display',serif}
+.sec.access .card.priv{background:#fff;border:0}
+.sec.access .card .k,.sec.access .card.priv .k{color:var(--coral)}
+.sec.access .card.priv .k,.sec.access .card.priv li::before,.sec.access .card .soon{color:var(--violet)}
+.access .card li::before{color:var(--coral)}
+.chip.on,.chip:hover{border-color:var(--violet);background:rgba(106,63,209,.10)}
+.row.on{background:rgba(106,63,209,.08)}
+.row.on .n,.now .k,.tip .k,.card .k{color:var(--violet)}
+.marquee{background:transparent;border-color:rgba(43,33,48,.12)}
+.secart{display:block;width:min(360px,70%);margin:-20px auto 10px;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 55%,transparent 72%);mask-image:radial-gradient(circle at 50% 50%,#000 55%,transparent 72%)}
+.pin{fill:var(--violet)}
+.map text.k{fill:var(--coral)}
 </style>
 </head>
 <body>
@@ -234,8 +275,9 @@ h1 .nomads{color:var(--clay);text-shadow:none}
   </header>
 
   <main>
+    <img class="heroart" src="../img/art/hero.jpg" alt="A wanderer looking out over the sea at sunset, painted in soft watercolor">
     <p class="eyebrow">Artist collective · public access</p>
-    <h1><span class="native">NATIVE</span><span class="nomads">Nomads</span></h1>
+    <h1><span class="native">Native</span><span class="nomads">Nomads</span></h1>
     <p class="line">Live globally. Connect deeply. <span class="rot" id="rot">Wander.</span></p>
 
     <div class="join">
@@ -272,6 +314,7 @@ h1 .nomads{color:var(--clay);text-shadow:none}
 </div>
 
 <section class="sec sounds" id="watch">
+  <img class="secart" src="../img/art/focus.jpg" alt="Headphones, a notebook and tea with soft lilac smoke and music notes" loading="lazy">
   <p class="eyebrow">Background sounds for working at home</p>
   <h2>Set the tone. <em>Press play.</em></h2>
   <p class="sub">A playlist of calm, 432 Hz music with real views from the places we visit. Put one on while you work, study or wind down, and let the world keep you company.</p>
@@ -298,6 +341,7 @@ h1 .nomads{color:var(--clay);text-shadow:none}
 </section>
 
 <section class="sec access" id="about">
+  <img class="secart" src="../img/art/members.jpg" alt="An open glowing doorway with a suitcase, key and palm" loading="lazy">
   <p class="eyebrow">What is Native Nomads</p>
   <h2>Public access for <em>wanderers.</em></h2>
   <p class="sub">An artist collective for every age and every kind of wanderer. Some of it is free for everyone, like public radio. The rest is a private network for members who move around the world and want to land well.</p>
