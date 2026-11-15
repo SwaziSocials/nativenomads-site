@@ -155,6 +155,16 @@ footer a:hover{color:var(--sun)}
 .joinsec{text-align:center;padding-bottom:110px}
 .joinsec .join{opacity:1;animation:none;margin-top:30px}
 
+.access .cards{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px}
+.access .card{border:1px solid rgba(246,239,228,.16);border-radius:18px;padding:30px 28px;background:rgba(246,239,228,.03)}
+.access .card.priv{border-color:rgba(232,163,92,.45);background:linear-gradient(160deg,rgba(232,163,92,.10),rgba(246,239,228,.02))}
+.access .card .k{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--sun)}
+.access .card h3{font-family:Italiana,serif;font-weight:400;font-size:30px;margin:10px 0 16px}
+.access .card ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.access .card li{color:var(--dim);font-size:15px;line-height:1.5;padding-left:22px;position:relative}
+.access .card li::before{content:"✦";position:absolute;left:0;color:var(--sun);font-size:11px;top:3px}
+.access .card .soon{margin-top:20px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sun)}
+.access .join{opacity:1;animation:none;text-align:center;margin-top:40px}
 .event{padding-top:60px}
 .event figure{max-width:1000px;margin:0 auto}
 .event img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(246,239,228,.14);box-shadow:0 30px 80px rgba(0,0,0,.55)}
@@ -183,7 +193,7 @@ footer a:hover{color:var(--sun)}
   </header>
 
   <main>
-    <p class="eyebrow">Slow travel sounds · one country at a time</p>
+    <p class="eyebrow">Public access · one country at a time</p>
     <h1><span class="native">NATIVE</span><span class="nomads">Nomads</span></h1>
     <p class="line">Live globally. Connect deeply. <span class="rot" id="rot">Wander.</span></p>
 
@@ -192,7 +202,7 @@ footer a:hover{color:var(--sun)}
         <a class="btn" href="#watch">▶ Press play <span class="arr">↓</span></a>
         <a class="btn ghost" href="https://forms.gle/TcB6cx6fcfrr6YxKA" target="_blank" rel="noopener">Join the letter <span class="arr">→</span></a>
       </div>
-      <p class="fine">Calm music and real views from one country at a time. Play it while you work, read or wind down.</p>
+      <p class="fine">Free calm music, art and events from one country at a time, like public radio for wanderers. Members get places to stay, local help and private gatherings.</p>
     </div>
   </main>
 
@@ -201,11 +211,13 @@ footer a:hover{color:var(--sun)}
   </div>
 
   <footer>
-    <span>© <span id="yr"></span> Native Nomads</span>
+    <span>© <span id="yr"></span> Native Nomads · a Swazi Socials brand</span>
     <nav>
       <a href="https://www.instagram.com/nativenomads_earth" target="_blank" rel="noopener">Instagram</a>
       <a href="#watch">Sounds</a>
+      <a href="#about">About</a>
       <a href="#world">Countries</a>
+      <a href="#event">Events</a>
       <a href="https://www.youtube.com/channel/UC0h7vzxHTVuT_9rpfnc3mAw" target="_blank" rel="noopener">YouTube</a>
     </nav>
   </footer>
@@ -232,9 +244,40 @@ footer a:hover{color:var(--sun)}
   <div class="tips">
     <div class="tip"><span class="k">Focus</span><p>3 hours of 25-minute work blocks. A chime and a breathing ring mark each 5-minute break.</p></div>
     <div class="tip"><span class="k">Explore</span><p>One slow hour through the country. Good for light work, reading and long afternoons.</p></div>
-    <div class="tip"><span class="k">Log off</span><p>12 hours of fire, ocean, wind or earth that settle into a dark screen for rest.</p></div>
+    <div class="tip"><span class="k">Log off</span><p>Put your phone away, press play and go to bed. 12 hours of fire, ocean, wind or earth that settle into a dark screen.</p></div>
   </div>
   <div class="subs"><a class="btn" href="https://www.youtube.com/channel/UC0h7vzxHTVuT_9rpfnc3mAw?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube <span class="arr">→</span></a></div>
+</section>
+
+<section class="sec access" id="about">
+  <p class="eyebrow">What is Native Nomads</p>
+  <h2>Public access for <em>wanderers.</em></h2>
+  <p class="sub">Some of it is free for everyone, like public radio. The rest is a private network for members who move around the world and want to land well.</p>
+  <div class="cards">
+    <div class="card">
+      <span class="k">Free for everyone</span>
+      <h3>The public channel</h3>
+      <ul>
+        <li>3-hour focus sessions with calm music for study and deep work</li>
+        <li>Wind-down sounds to log off, put the phone away and sleep</li>
+        <li>Art and real views from one country at a time</li>
+        <li>Public events and gatherings</li>
+      </ul>
+    </div>
+    <div class="card priv">
+      <span class="k">For members</span>
+      <h3>The private network</h3>
+      <ul>
+        <li>Places to stay: short and long-term rentals from a private real estate network</li>
+        <li>Good food, water, shelter and transportation wherever you land</li>
+        <li>A hotline for what you need, what you like and how you like it</li>
+        <li>Tips picked for where you are and when you are there</li>
+        <li>Private events, experiences and opportunities, made with our partners</li>
+      </ul>
+      <p class="soon">Membership opening soon</p>
+    </div>
+  </div>
+  <div class="join"><a class="btn" href="https://forms.gle/TcB6cx6fcfrr6YxKA" target="_blank" rel="noopener">Get first access <span class="arr">→</span></a></div>
 </section>
 
 <section class="sec world" id="world">
@@ -255,7 +298,7 @@ footer a:hover{color:var(--sun)}
 
 
 <section class="sec event" id="event">
-  <p class="eyebrow">Upcoming event</p>
+  <p class="eyebrow">Events · hosted by Native Nomads</p>
   <h2>AI, <em>Hands On.</em></h2>
   <p class="sub">Tuesday, Nov 17 · 5 to 7 PM · Location to be announced. Bring your laptop and leave with something that works. Free, seats are limited.</p>
   <figure><a href="https://luma.com/xl4sd383" target="_blank" rel="noopener"><img src="img/events/ai-hands-on-nov17.jpg" alt="AI, Hands On. Tech session, Tuesday Nov 17, 5 to 7 PM. Swazi Socials x Lignova. RSVP at luma.com/xl4sd383" loading="lazy" width="1920" height="1080"></a></figure>
